@@ -123,13 +123,12 @@ https://atulkamble9796857478.blob.core.windows.net/mycontainer/cat.webp
 ```
 
 ---
+# Static Website Hosting 
 
-## Notes
+Data Management 
+static website setting 
 
-* Ensure your VM NSG allows inbound HTTP (port 80) traffic.
-* All blob URLs must be publicly accessible for this to work.
-* For production, consider using Azure CDN or Static Web Apps for better performance.
-
----
-
-Do you want me to also give you **Azure CLI Automation Script (.sh)** for the **entire setup end-to-end**?
+>> web >> index.html (paste blob url)
+```
+example: https://atulkamble9796857478.z13.web.core.windows.net/
+```
