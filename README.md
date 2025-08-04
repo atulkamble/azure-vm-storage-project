@@ -42,8 +42,8 @@ Prepare your `script.sh` file:
 
 ```bash
 #!/bin/bash
-sudo apt update -y
-sudo apt install apache2 -y
+sudo apt-get update -y
+sudo apt-get install apache2 -y
 sudo systemctl start apache2
 sudo systemctl enable apache2
 cd /var/www/html 
