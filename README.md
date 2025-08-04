@@ -41,15 +41,24 @@ az storage container create \
 Prepare your `script.sh` file:
 
 ```bash
-echo '#!/bin/bash
-apt update -y
-apt install apache2 git -y
-systemctl start apache2
-systemctl enable apache2
-cd /var/www/html
-chmod 755 /var/www/html
-touch index.html
-echo "hello world" > index.html' > script.sh
+#!/bin/bash
+sudo apt update -y
+sudo apt install apache2 -y
+sudo systemctl start apache2
+sudo systemctl enable apache2
+cd /var/www/html 
+sudo chmod 755 /var/www/html
+sudo tee index.html > /dev/null <<EOF
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome Page</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Hello World</h1>
+</body>
+</html>
+EOF
 ```
 
 Upload it to Blob Storage:
@@ -106,7 +115,7 @@ Replace content with:
     <h1 style="text-align: center;">Welcome to My Static Website!</h1>
 
     <div style="text-align: center;">
-        <img src="https://<your-storage-account-name>.blob.core.windows.net/mycontainer/cat.webp" alt="Cat">
+        <img src="https://<your-storage-account-name>.blob.core.windows.net/mycontainer/cat.jpg" alt="Cat">
     </div>
 </body>
 </html>
