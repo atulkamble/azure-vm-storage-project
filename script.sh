@@ -1,6 +1,10 @@
 #!/bin/bash
-sudo apt update -y
-sudo apt install apache2 -y
+# Exit immediately if a command exits with a non-zero status.
+set -e
+
+# Use apt-get for scripting to avoid interactive prompts and unstable CLI warnings
+sudo apt-get update -y
+sudo apt-get install -y apache2
 sudo systemctl start apache2
 sudo systemctl enable apache2
 cd /var/www/html 
