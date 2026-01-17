@@ -1,7 +1,3 @@
-Here’s the **README.md** formatted documentation for your Azure Storage + VM project:
-
----
-
 # Azure Storage Account & VM Static Website Deployment
 
 ## Overview
